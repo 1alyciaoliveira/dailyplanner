@@ -13,13 +13,14 @@ $('.saveBtn').on('click', function () {
 });
 
 //Allows the user to get the task added to the hour block when the page is reloaded/refreshed.
-
-$('.time-block').each(function() {
-  var hour = $(this).attr('id').split('-')[1];
-  var userInput = localStorage.getItem(hour);
-  if (userInput) {
-    $(this).find('.description').val(userInput);
-  }
+$(document).ready(function() {
+  $('.time-block').each(function() {
+    var hour = $(this).attr('id').split('-')[1];
+    var userInput = localStorage.getItem(hour);
+    if (userInput) {
+      $(this).find('.description').val(userInput);
+    }
+});
 });
 
 //Change color according to the hour of the day.
